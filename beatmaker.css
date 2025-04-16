@@ -1,0 +1,242 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  font-family: "Roboto", sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  width: 90vmin;
+  height: 90vmin; 
+  max-width: 1000px;
+  max-height: 1000px; 
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #f3f3f3;
+  background-color: #555; 
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  word-wrap: break-word;
+  text-align: center;
+  padding: 10px;
+}
+
+.grid-item:hover {
+  background-color: #777;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+  }
+}
+
+.pads-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pad {
+    opacity: 0.65;
+  }
+
+.pad--first {
+  background: linear-gradient(-45deg, #DE6262, #FFB88C, #DE6262);
+}
+
+.pad--second {
+    background: linear-gradient(-45deg, #00c6ff, #0072ff, #00c6ff);
+}
+
+.pad--third {
+    background: linear-gradient(-45deg, #F2994A, #F2C94C, #F2994A);
+}
+
+.pad--fourth {
+    background: linear-gradient(-45deg, #50C9C3, #96DEDA, #50C9C3);
+}
+
+.pad.active {
+  opacity: 1;
+}
+
+.circle-wrapper {
+  position: relative;
+  float: left;
+  margin: 10px;
+}
+
+.circle-wrapper:active .circle {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin { 
+  100% { 
+    transform: rotateZ(360deg);
+  }
+}
+
+.success {
+  border: 2px solid #ffffff;
+}
+
+.circle {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 2.5px;
+  background-clip: content-box;
+  animation: spin 20s linear infinite;
+}
+
+.play-btn {
+  box-shadow: 0 2px 5px gray;
+  border-radius: 50%;
+  cursor: pointer;
+  animation-play-state: paused;
+}
+
+.sep {
+  width: 95px;
+}
+
+/* .exit-btn {
+  border: none;
+  margin: 1rem;
+  width: 100px;
+  height: 50px;
+  box-shadow: 0 2px 5px rgb(0, 0, 0);
+  border-radius: 10px;
+  background-color: #555;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: #f3f3f3;
+  letter-spacing: 0.2rem;
+  font-weight: bolder;
+  cursor: pointer;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+} */
+
+.exit-btn {
+  width: 70px;
+  height: 40px;
+  background-color: #555;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.github-logo {
+  width: 28px;
+  height: 28px;
+  filter: invert(100%);
+}
+
+.exit-btn:hover {
+  background-color: #666;
+}
+
+.corner-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 999;
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.home-logo {
+  width: 28px;
+  height: 28px;
+  filter: invert(100%);
+}
+
+.tempo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: Arial;
+  color: gray;
+}
+
+.pad span {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+@keyframes rhythm {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px) rotate3d(1, 2, 3, -5deg);
+  }
+}
+
+@keyframes playing {
+  from {
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
