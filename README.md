@@ -1,6 +1,9 @@
 # **Beathaven**
 
-### **The Future of Music Creation**
+> [♫ Try it out ](https://beat-haven.netlify.app/)  
+
+
+[![Preview](marketing/shot.png)](https://beat-haven.netlify.app/)
 
 **Beathaven** is a revolutionary music-making web app created during the **2023 WDCC x SESA Hackathon**, themed **"Rewriting History!"**. This app was built with the goal of making music creation effortless, accessible, and enjoyable for everyone, no matter their skill level.
 
